@@ -1,0 +1,29 @@
+@layer components {
+  .hero-cover {
+    @apply flex flex-1 flex-col;
+  }
+
+  /* Insure all children of the "Cover" component (above, centered, below) 
+have margins  */
+  .hero-cover > * {
+    margin-block: 1em;
+    @apply text-center;
+  }
+
+  /* Override the previous rule using specifity. We want our 'Centered' element to be equally spaced vertically between 
+above and below if Centered's height is smaller than the avaiable space  */
+  .hero-cover > article {
+    margin-block: auto;
+  }
+
+  /* 
+These rules ensure there is spacing between all discrete components (above, centered, below)
+IF the Centered component is tall enough to fill ALL space between the above and below components
+*/
+  .hero-cover > :first-child:not(article) {
+    margin-block-start: 0;
+  }
+  .hero-cover > :last-child:not(article) {
+    margin-block-end: 0;
+  }
+}
