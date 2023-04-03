@@ -1,0 +1,4 @@
+- Not sure why ESLint / Typescript don't warn us about unsafe variable access (eg. CenterVertically.tsx).
+- Not sure if the aforementioned issue is caused by an actual issue with the eslint / tsconfig config morass.
+  - REQUIRED: a way to check if our rules / plugins / extends are actually being applied.
+  - Make sure the config is formatted correctly.
