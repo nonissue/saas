@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /*
 
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
@@ -44,14 +45,14 @@ so component is self-contained / encapsulated.
 
 import { type ReactElement } from "react";
 
-type CenterVerticallyProps = {
+interface CenterVerticallyProps {
   // Element to be placed in the center of the CenterVertically
   children: ReactElement;
   // AboveCenterVertically == An optional element, like a header, that should be rendered above the CenterVertically
-  AboveCentered?: ReactElement;
+  AboveCentered?: ReactElement<any, any> | null;
   // BelowCenterVertically == An optional element, like a footer, that should be rendered below the CenterVertically;
-  BelowCentered?: ReactElement;
-};
+  BelowCentered?: ReactElement<any, any> | null;
+}
 
 const CenterVertically = (props: CenterVerticallyProps) => {
   const { AboveCentered, BelowCentered, children } = props;
@@ -60,7 +61,7 @@ const CenterVertically = (props: CenterVerticallyProps) => {
   // FIXME: at the moment, I'm not getting a lint error if we attempt to access AboveCentered without checking if it's defined.
   // surely typescript should warn us about this?
 
-  // console.log(AboveCentered);
+  console.log(AboveCentered);
 
   return (
     <div className="hero-cover">
@@ -68,7 +69,7 @@ const CenterVertically = (props: CenterVerticallyProps) => {
       {/* {<div>{AboveCentered}</div> ?? ""} */}
       {/* {<div>{AboveCentered}</div>} */}
       {children}
-      {BelowCentered ? <div>{BelowCentered}</div> : ""}
+      {BelowCentered ? BelowCentered : ""}
     </div>
   );
 };
