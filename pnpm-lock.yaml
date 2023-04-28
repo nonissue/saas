@@ -1,9 +1,15 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@hookform/resolvers':
+    specifier: ^3.1.0
+    version: 3.1.0(react-hook-form@7.43.9)
   '@prisma/client':
     specifier: ^4.12.0
     version: 4.12.0(prisma@4.12.0)
+  '@ts-react/form':
+    specifier: ^1.6.3
+    version: 1.6.3(@hookform/resolvers@3.1.0)(react-hook-form@7.43.9)(react@18.2.0)(zod@3.21.4)
   next:
     specifier: ^13.3.0
     version: 13.3.0(react-dom@18.2.0)(react@18.2.0)
@@ -13,6 +19,9 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
+  react-hook-form:
+    specifier: ^7.43.9
+    version: 7.43.9(react@18.2.0)
   zod:
     specifier: ^3.21.4
     version: 3.21.4
@@ -112,6 +121,14 @@ packages:
     resolution: {integrity: sha512-IoD2MfUnOV58ghIHCiil01PcohxjbYR/qCxsoC+xNgUwh1EY8jOOrYmu3d3a71+tJJ23uscEV4X2HJWMsPJu4g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
+
+  /@hookform/resolvers@3.1.0(react-hook-form@7.43.9):
+    resolution: {integrity: sha512-z0A8K+Nxq+f83Whm/ajlwE6VtQlp/yPHZnXw7XWVPIGm1Vx0QV8KThU3BpbBRfAZ7/dYqCKKBNnQh85BkmBKkA==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+    dependencies:
+      react-hook-form: 7.43.9(react@18.2.0)
+    dev: false
 
   /@humanwhocodes/config-array@0.11.8:
     resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}
@@ -321,6 +338,20 @@ packages:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
       tslib: 2.5.0
+    dev: false
+
+  /@ts-react/form@1.6.3(@hookform/resolvers@3.1.0)(react-hook-form@7.43.9)(react@18.2.0)(zod@3.21.4):
+    resolution: {integrity: sha512-xGJYgAD5O6hBQsOjkxj6W1IB2omS1ZzT+NeaZjUTYahzQm92eVfUeFTUYYpMfEfJRkJ9JA0K3uBzteW2veJ2tw==}
+    peerDependencies:
+      '@hookform/resolvers': ^2.8.0
+      react: ^16.8.0 || ^17 || ^18
+      react-hook-form: ^7.39.0
+      zod: ^3.19.0
+    dependencies:
+      '@hookform/resolvers': 3.1.0(react-hook-form@7.43.9)
+      react: 18.2.0
+      react-hook-form: 7.43.9(react@18.2.0)
+      zod: 3.21.4
     dev: false
 
   /@types/eslint@8.37.0:
@@ -632,7 +663,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001469
+      caniuse-lite: 1.0.30001479
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -684,10 +715,10 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001469
-      electron-to-chromium: 1.4.334
+      caniuse-lite: 1.0.30001479
+      electron-to-chromium: 1.4.365
       node-releases: 2.0.10
-      update-browserslist-db: 1.0.10(browserslist@4.21.5)
+      update-browserslist-db: 1.0.11(browserslist@4.21.5)
     dev: true
 
   /busboy@1.6.0:
@@ -714,13 +745,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /caniuse-lite@1.0.30001469:
-    resolution: {integrity: sha512-Rcp7221ScNqQPP3W+lVOYDyjdR6dC+neEQCttoNr5bAyz54AboB4iwpnWgyi8P4YUsPybVzT4LgWiBbI3drL4g==}
-    dev: true
-
   /caniuse-lite@1.0.30001479:
     resolution: {integrity: sha512-6nuRFim5dx8Eu2tO+KJ9PiBdPHs7WB5Hdf+klDcyefyEuOAcfhihIv7pS+JFknJLUiNQbm1AJYKm0c9QOlQS/Q==}
-    dev: false
 
   /chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
@@ -883,8 +909,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /electron-to-chromium@1.4.334:
-    resolution: {integrity: sha512-laZ1odk+TRen6q0GeyQx/JEkpD3iSZT7ewopCpKqg9bTjP1l8XRfU3Bg20CFjNPZkp5+NDBl3iqd4o/kPO+Vew==}
+  /electron-to-chromium@1.4.365:
+    resolution: {integrity: sha512-FRHZO+1tUNO4TOPXmlxetkoaIY8uwHzd1kKopK/Gx2SKn1L47wJXWD44wxP5CGRyyP98z/c8e1eBzJrgPeiBOg==}
     dev: true
 
   /emoji-regex@9.2.2:
@@ -2304,6 +2330,15 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-hook-form@7.43.9(react@18.2.0):
+    resolution: {integrity: sha512-AUDN3Pz2NSeoxQ7Hs6OhQhDr6gtF9YRuutGDwPQqhSUAHJSgGl2VeY3qN19MG0SucpjgDiuMJ4iC5T5uB+eaNQ==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
@@ -2697,8 +2732,8 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: true
 
-  /update-browserslist-db@1.0.10(browserslist@4.21.5):
-    resolution: {integrity: sha512-OztqDenkfFkbSG+tRxBeAnCVPckDBcvibKd35yDONx6OU8N7sqgwc7rCbkJ/WcYtVRZ4ba68d6byhC21GFh7sQ==}
+  /update-browserslist-db@1.0.11(browserslist@4.21.5):
+    resolution: {integrity: sha512-dCwEFf0/oT85M1fHBg4F0jtLwJrutGoHSQXCh7u4o2t1drG+c0a9Flnqww6XUKSfQMPpJBRjU8d4RXB09qtvaA==}
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
