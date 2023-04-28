@@ -3,6 +3,7 @@ import { useState } from "react";
 import { CenterVertically } from "~/components/CenterVertically";
 
 import _people from "~/demo-data.json";
+import Layout from "~/layouts/base";
 
 interface Person {
   id: number;
@@ -13,12 +14,6 @@ interface Person {
 const people = _people.sort((a, b) =>
   a.firstName > b.firstName ? 1 : -1
 ) as Person[];
-
-const Layout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className="flex min-h-screen flex-col bg-slate-200">{children}</div>
-  );
-};
 
 const AddMatch: NextPage = () => {
   const [winner, setWinner] = useState<Person>();
