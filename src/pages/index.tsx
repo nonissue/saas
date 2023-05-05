@@ -26,8 +26,8 @@ const AddMatch: NextPage = () => {
         <article className=" mx-auto flex w-full max-w-4xl flex-row flex-wrap">
           <h1>SaaS</h1>
           <section>
-            <MatchScoreboard />
-            <MatchScoreboard />
+            {/* <MatchScoreboard /> */}
+            {/* <MatchScoreboard /> */}
           </section>
         </article>
       </CenterVertically>

@@ -7,9 +7,6 @@ dependencies:
   '@prisma/client':
     specifier: ^4.12.0
     version: 4.12.0(prisma@4.12.0)
-  '@ts-react/form':
-    specifier: ^1.6.3
-    version: 1.6.3(@hookform/resolvers@3.1.0)(react-hook-form@7.43.9)(react@18.2.0)(zod@3.21.4)
   next:
     specifier: ^13.3.0
     version: 13.3.0(react-dom@18.2.0)(react@18.2.0)
@@ -338,20 +335,6 @@ packages:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
       tslib: 2.5.0
-    dev: false
-
-  /@ts-react/form@1.6.3(@hookform/resolvers@3.1.0)(react-hook-form@7.43.9)(react@18.2.0)(zod@3.21.4):
-    resolution: {integrity: sha512-xGJYgAD5O6hBQsOjkxj6W1IB2omS1ZzT+NeaZjUTYahzQm92eVfUeFTUYYpMfEfJRkJ9JA0K3uBzteW2veJ2tw==}
-    peerDependencies:
-      '@hookform/resolvers': ^2.8.0
-      react: ^16.8.0 || ^17 || ^18
-      react-hook-form: ^7.39.0
-      zod: ^3.19.0
-    dependencies:
-      '@hookform/resolvers': 3.1.0(react-hook-form@7.43.9)
-      react: 18.2.0
-      react-hook-form: 7.43.9(react@18.2.0)
-      zod: 3.21.4
     dev: false
 
   /@types/eslint@8.37.0:
