@@ -1,6 +1,8 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+// geme must belong to two different players
+// 
 generator client {
     provider = "prisma-client-js"
 }
@@ -14,4 +16,59 @@ model Example {
     id        String   @id @default(cuid())
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+}
+
+// model Player {
+//   id         Int      @id @default(autoincrement())
+//   name       String   @unique
+//   createdAt  DateTime @default(now())
+//   matches    Match[]
+// }
+
+// model Match {
+//   id          Int      @id @default(autoincrement())
+//   createdAt   DateTime @default(now())
+//   winner      Player   @relation("Winner")
+//   loser       Player   @relation("Loser")
+//   winnerScore Int
+//   loserScore  Int
+// }
+
+model Player {
+    id        Int      @id @default(autoincrement())
+    name      String
+    email     String   @unique
+    createdAt DateTime @default(now())
+
+    games  Game[]
+    scores Score[]
+}
+
+model Match {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+
+    games Game[]
+}
+
+model Game {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+
+    players Player[]
+    scores  Score[]
+
+    Match   Match @relation(fields: [matchId], references: [id])
+    matchId Int
+}
+
+model Score {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    score     Int
+
+    game     Game   @relation(fields: [gameId], references: [id])
+    gameId   Int
+    player   Player @relation(fields: [playerId], references: [id])
+    playerId Int
 }
