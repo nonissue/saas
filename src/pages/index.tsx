@@ -16,15 +16,15 @@ const AddMatch: NextPage = () => {
     <Layout>
       <CenterVertically
         AboveCentered={
-          <div className="flex items-center justify-between bg-slate-50 px-4 py-4 shadow-md">
-            <div className="text-md font-bold leading-tight">IS</div>
+          <div className="flex items-center justify-between bg-slate-800 px-4 py-4 shadow-md">
+            <div className="text-md font-bold leading-tight">SaaS</div>
             <div className="">Nav</div>
           </div>
         }
         BelowCentered={<div>footer</div>}
       >
-        <article className=" mx-auto flex w-full max-w-4xl flex-row flex-wrap">
-          <h1>SaaS</h1>
+        <article className="mx-auto flex w-full max-w-4xl flex-row flex-wrap ">
+          <h1>SaaS!!</h1>
           <section>
             {/* <MatchScoreboard /> */}
             {/* <MatchScoreboard /> */}
