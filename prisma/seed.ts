@@ -1,29 +1,29 @@
-// import { Prisma, PrismaClient } from "@prisma/client";
 import { PrismaClient } from "@prisma/client";
 
+// Need to manually reset after each seeding otherwise this fails ATM.
+// pnpm prisma migrate reset --skip-seed
+// pnpm prisma db seed
 const prisma = new PrismaClient();
 
-interface FakePlayer {
-  name: string;
-  email: string;
-}
+// interface FakePlayer {
+//   name: string;
+//   email: string;
+// }
 
-const fakePlayers: FakePlayer[] = [
-  { name: "John Doe", email: "johndoe@www.com" },
-];
+const generateFakePlayer = () => {
+  const fakeName = "Generate fake name here";
+  const fakeEmail = "Generate fake email here";
 
-const test = prisma.player.create({
-  data: { name: "John Doe", email: "test@etst.com}}" },
-});
+  return { name: fakeName, email: fakeEmail };
+};
 
 const createFakePlayer = prisma.player.create({
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  data: fakePlayers[0]!,
+  data: generateFakePlayer(),
 });
 
 async function main() {
   console.log(`Start seeding ...`);
-  const res = await test;
+  const res = await createFakePlayer;
   console.log(res);
 
   // const words = [];
