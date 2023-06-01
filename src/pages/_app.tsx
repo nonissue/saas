@@ -1,6 +1,6 @@
 import Inspect from "inspx";
 import { ThemeProvider } from "next-themes";
-
+import { Header } from "~/components";
 import { type AppType } from "next/dist/shared/lib/utils";
 
 import "~/styles/globals.css";
@@ -10,7 +10,8 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <Inspect>
       <ThemeProvider attribute="class" defaultTheme="system">
-        <Component {...pageProps} />{" "}
+        <Header />
+        <Component {...pageProps} />
       </ThemeProvider>
     </Inspect>
   );
