@@ -10,7 +10,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <Inspect>
       <ThemeProvider attribute="class" defaultTheme="system">
-        <Header />
+        {/* <Header /> */}
         <Component {...pageProps} />
       </ThemeProvider>
     </Inspect>
